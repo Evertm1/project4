@@ -11,23 +11,23 @@ module.exports = {
   login
 };
 
-function signup(req, res) {
-  console.log(req.body, req.file)
+async function signup(req, res) {
+  console.log(req.body) //, req.file)
 
   //////////////////////////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////////////
 
   // FilePath unique name to be saved to our butckt
-  const filePath = `${uuidv4()}/${req.file.originalname}`
-  const params = {Bucket: process.env.BUCKET_NAME, Key: filePath, Body: req.file.buffer};
+  //          const filePath = `${uuidv4()}/${req.file.originalname}`
+  //          const params = {Bucket: process.env.BUCKET_NAME, Key: filePath, Body: req.file.buffer};
   //your bucket name goes where collectorcat is 
   //////////////////////////////////////////////////////////////////////////////////
-  s3.upload(params, async function(err, data){
-    console.log(data, 'from aws') // data.Location is our photoUrl that exists on aws
-    const user = new User({...req.body, photoUrl: data.Location});
+  //          s3.upload(params, async function(err, data){
+  //          console.log(data, 'from aws') // data.Location is our photoUrl that exists on aws
+  //  const user = new User({...req.body});
     try {
-      await user.save();
+      await user.save();  //await user.save()
       const token = createJWT(user); // user is the payload so this is the object in our jwt
       res.json({ token });
     } catch (err) {
@@ -37,7 +37,7 @@ function signup(req, res) {
 
 
 
-  })
+//  })
   //////////////////////////////////////////////////////////////////////////////////
  
 }
@@ -51,8 +51,8 @@ async function login(req, res) {
     user.comparePassword(req.body.password, (err, isMatch) => {
         
       if (isMatch) {
-        const token = createJWT(user);
-        res.json({token});
+        const token = createJWT(user);   //if the user exists and the password matches, we create jwt with secret (step 2 in diagram)
+        res.json({token}); // return the jwt to the client (step 3)
       } else {
         return res.status(401).json({err: 'bad credentials'});
       }

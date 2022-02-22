@@ -1,14 +1,15 @@
 import tokenService from './tokenService';
 
 const BASE_URL = '/api/users/';
-
+//^ because of the proxy, this can be thought of as localhost3001/api/users,
+//which is where the routes actually exist
 
 // NOTE THIS IS configured to send of a multi/part form request
 // aka photo 
 function signup(user) {
   return fetch(BASE_URL + 'signup', {
     method: 'POST',
-    body: user
+    body: JSON.stringify(user) //<-----double check this line, added JSON.stringify to user
   })
   .then(res => {
     if (res.ok) return res.json();
