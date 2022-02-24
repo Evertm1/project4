@@ -4,6 +4,7 @@ import { Button, Form, Grid, Header, Image, Segment } from "semantic-ui-react";
 import userService from "../../utils/userService";
 import { useNavigate } from "react-router-dom";
 
+
 export default function SignUpPage(props) {
 
   const [error, setError] = useState('')
@@ -13,6 +14,8 @@ export default function SignUpPage(props) {
     password: '',
     passwordConf: '',
   })
+
+  const navigate = useNavigate(); // navigate hook from reac-router
 
   function handleChange(e){
     setState({
@@ -27,7 +30,9 @@ export default function SignUpPage(props) {
     try {
 
       await userService.signup(state)
+      props.handleSignUpOrLogin() // <-- will get token from local storage and decode, set the user state in app.js component
 
+      navigate('/') // route the user to our home compoenent
     } catch(err){
       setError(err.message)
     }
