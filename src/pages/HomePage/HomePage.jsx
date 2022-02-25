@@ -48,7 +48,7 @@ export default function HomePage({user}) {
         <>
         <Header />
         <AddProject handleAddProject={handleAddProject}/>
-        <br break-word></br>
+        <br></br>
         <Grid centered>
         <Grid.Row> 
         </Grid.Row>  

@@ -28,3 +28,16 @@ export function getAll() {
 		throw new Error('Problem Fetching Gel All')
 	})	
   }
+
+export function getProject(project_id) {
+
+    return fetch(BASE_URL + project_id, {
+        headers: {
+            'Authorization': 'Bearer ' + tokenService.getToken()
+          }
+    }).then(res => {
+        if(res.ok) return res.json()
+        throw new Error('Project not found')
+    })
+
+}
