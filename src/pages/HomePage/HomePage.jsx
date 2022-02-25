@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from '../../components/Header/Header';
 import AddProject from '../../components/AddProject/AddProject';
 import ProjectFeed from '../../components/ProjectFeed/ProjectFeed';
 import * as projectApi from '../../utils/projectApi'; //* is export, not export default
 import userService from "../../utils/userService";
 import { Grid } from "semantic-ui-react";
-export default function HomePage() {
+
+export default function HomePage({user}) {
     
     const [projects, setProjects] = useState([])
+    const [error, setError] = useState("");
     // all api calls to crud projects should be defined here, then passed down to a componenet
     //if they need to be invoked after some ui
 
@@ -15,20 +17,50 @@ export default function HomePage() {
             console.log(projectInfo, "<- projectInfo")
         try {
             const data = await projectApi.create(projectInfo)
-            console.log(data, '<- this is the respinse from the server, this will contain data we want to update our project state')
-            setProjects(projects => [data.project, ...projects])
+            console.log(data, '<- this is the response from the server, this will contain data we want to update our project state')
+            setProjects(projects => [data.project, ...projects]) //if any posts exist, they will be emptied into new array
         }catch(err){
             console.log(err)
         }
     }
 
+    async function getProjects() {
+        try {
+          const data = await projectApi.getAll();
+          console.log(data, " this is data,");
+          setProjects([...data.projects]);
+          //setLoading(false);
+        } catch (err) {
+          console.log(err.message, " this is the error");
+          setError(err.message);
+        }
+      }
+    
+      // useEffect runs once
+      // the component is first rendered (whenever you first view the component)
+      // Component Lifecycle in react
+      useEffect(() => {
+        getProjects();
+      }, []);
+    
+
     return(
         <>
         <Header />
         <AddProject handleAddProject={handleAddProject}/>
-        <ProjectFeed projects={projects}/>
-        </>
-
-    );
-    
-}
+        <br break-word></br>
+        <Grid centered>
+        <Grid.Row> 
+        </Grid.Row>  
+      <Grid.Row>
+        <Grid.Column style={{ maxWidth: 450 }}>
+          <ProjectFeed
+            projects={projects}
+            user={user}
+          />
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+    </>
+  );
+} 

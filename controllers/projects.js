@@ -49,6 +49,7 @@ async function create(req, res){
         trackName: req.body.track1Name,
         
     })
+    project = await project.populate('user')
     // console.log(data, '<-- data object')
     res.status(201).json({project})
    } catch(err) {
