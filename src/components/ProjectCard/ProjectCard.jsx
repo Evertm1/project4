@@ -11,7 +11,9 @@ function ProjectCard({project}) {
       <Item.Image size='tiny' src={`${project.coverArtUrl}`}/>
 
       <Item.Content>
+          <Link to={`/${project._id}`}>
         <Item.Header as='a'>{project.title}</Item.Header>
+        </Link>
         <Item.Meta></Item.Meta>
         <Item.Description>
         {project.description}
