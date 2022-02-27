@@ -6,7 +6,7 @@ import * as projectApi from '../../utils/projectApi'; //* is export, not export 
 import Accordion from '../../components/Accordion/Accordion';
 import Banner from '../../components/Banner/Banner';
 import userService from "../../utils/userService";
-import { Grid } from "semantic-ui-react";
+import { Grid, Divider } from "semantic-ui-react";
 
 export default function HomePage({user, handleLogout}) {
     
@@ -58,9 +58,11 @@ export default function HomePage({user, handleLogout}) {
         <>
         <Header user={user} handleLogout={handleLogout} />
         <Banner/>
+     
         {/* <AddProject handleAddProject={handleAddProject}/> */}
         <Accordion handleAddProject={handleAddProject}/>
-        <br></br>
+        {/* <Divider/> */}
+
         <div id="project-feed">
         <Grid centered>
             <Grid.Row>

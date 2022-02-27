@@ -12,7 +12,7 @@ function Banner(){
                 <div class="wrapper">
                     <p>
                     Jam Factory is a file sharing application that supports collaboration among all musicians.
-                    Start your own project by uploading a singular track such as a bass-line or drum beat and wait for others to respond with their own musical creations that compliment your work.
+                    Start your own project by uploading a singular track such as a bass-line or drum beat and wait for others to respond with their own musical contributions that compliment your work.
                     Check out existing projects below to immediately start jamming with others!  
                     </p>
                 </div>

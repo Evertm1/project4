@@ -21,6 +21,7 @@ export default function PageHeader({ user, handleLogout }) {
             fluid
             size= 'mini'
           ></Image>
+          <div id="header-logo-text">Jam Factory</div>
         </Link>
       </Header>
     </Segment>
