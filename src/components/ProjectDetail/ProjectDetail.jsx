@@ -4,6 +4,7 @@ export default function ProjectDetail({project}){
 
     return (
         <>
+        
         <div>Project details display</div>
         <div>{project.title}</div>
         <div>{project.user}</div>

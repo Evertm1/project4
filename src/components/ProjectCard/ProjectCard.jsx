@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { Image, Item } from 'semantic-ui-react'
+import { Image, Item, Card } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
 function ProjectCard({project}) {
 
     return (
+    <Card>
     <Item.Group>
     <Item key={project._id}>
       <Item.Image size='tiny' src={`${project.coverArtUrl}`}/>
@@ -22,7 +23,7 @@ function ProjectCard({project}) {
       </Item.Content>
     </Item>
     </Item.Group>
-
+    </Card>
 
 
     )
