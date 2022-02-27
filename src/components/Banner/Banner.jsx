@@ -10,12 +10,10 @@ function Banner(){
 
             <div class="content-area">
                 <div class="wrapper">
-                    <h2>Text Details</h2>
                     <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                    molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-                    numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-                    optio, eaque rerum! 
+                    Jam Factory is a file sharing application that supports collaboration among all musicians.
+                    Start your own project by uploading a singular track such as a bass-line or drum beat and wait for others to respond with their own musical creations that compliment your work.
+                    Check out existing projects below to immediately start jamming with others!  
                     </p>
                 </div>
             </div>

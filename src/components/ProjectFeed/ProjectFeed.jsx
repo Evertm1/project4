@@ -8,13 +8,9 @@ export default function ProjectFeed({
 }) {
     return (
        // <span> Project Feed, this will render out each project as a card</span>
-        <Card.Group itemsPerRow= {1} stackable>
         
-          <Segment>
-            <Dimmer active inverted>
-            </Dimmer>
-            {/* <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" /> */}
-          </Segment>
+        
+        <Card.Group itemsPerRow= {1} stackable centered >
           
         {projects.map((project) => {
           return (
@@ -27,7 +23,7 @@ export default function ProjectFeed({
           );
         })}
       </Card.Group>
-
+    
     );
 }
 

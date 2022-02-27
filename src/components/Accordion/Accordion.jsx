@@ -12,7 +12,6 @@ const panels = _.times(1, (i) => ({
     content: (
       <Message
         info
-        header='This is the Header'
         content={<AddProject/>}
       />
     ),

@@ -13,13 +13,13 @@ function ProjectCard({project}) {
 
       <Item.Content>
           <Link to={`/${project._id}`}>
-        <Item.Header as='a'>{project.title}</Item.Header>
+        <Item.Header as='a'><strong>{project.title}</strong></Item.Header>
         </Link>
         <Item.Meta></Item.Meta>
         <Item.Description>
-        {project.description}
+        By {project.user.username}
         </Item.Description>
-        <Item.Extra>{project.user.username},</Item.Extra>
+        {/* <Item.Extra>{project.user.username},</Item.Extra> */}
       </Item.Content>
     </Item>
     </Item.Group>

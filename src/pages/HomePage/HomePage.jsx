@@ -61,18 +61,18 @@ export default function HomePage({user, handleLogout}) {
         {/* <AddProject handleAddProject={handleAddProject}/> */}
         <Accordion handleAddProject={handleAddProject}/>
         <br></br>
+        <div id="project-feed">
         <Grid centered>
-        <Grid.Row> 
-        </Grid.Row>  
-      <Grid.Row>
-        <Grid.Column style={{ maxWidth: 450 }}>
-          <ProjectFeed
-            projects={projects}
-            user={user}
-          />
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
+            <Grid.Row>
+                <Grid.Column style={{ maxWidth: 450 }}>
+                <ProjectFeed
+                    projects={projects}
+                    user={user}
+                />
+                </Grid.Column>
+            </Grid.Row>
+        </Grid>
+        </div>
     </>
   );
 } 
