@@ -6,7 +6,7 @@ import AddProject from "../AddProject/AddProject";
 const panels = _.times(1, (i) => ({
   key: `panel-${i}`,
   title: {
-    content: <Label color='blue' content='Start A Collaborative Project' />,
+    content: <Label color='blue' content='Start a Collaborative Project' />,
   },
   content: {
     content: (

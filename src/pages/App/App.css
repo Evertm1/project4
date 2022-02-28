@@ -106,7 +106,7 @@ body{
   margin-top: 370px;
   /* height: 160px; */
   margin-bottom: -15px;
-  padding-bottom: 50px;
+  padding-bottom: 60px;
   background-color: white;
   position: relative;
   text-align: left;
@@ -129,13 +129,35 @@ body{
   position: relative;
 }
 
-#detail {
-  padding-top: 100px;
-}
-
 #header-logo-text{
   font-family: 'Permanent Marker', cursive;
   padding-left: 55px;
   margin-top: -37px;
   color: rgb(18,36,66)
+}
+
+#detail-image {
+  padding-top: 100px;
+}
+
+#detail-segment {
+  width: 70vh;
+  margin: auto;
+  margin-top: 15px
+}
+
+#comment {
+  width: 70vh;
+  margin: auto;
+  margin-top: 15px
+}
+
+#detail-title {
+  margin-top: 10px;
+  font-family: 'Permanent Marker', cursive;
+}
+
+#feed-title {
+  font-family: 'Permanent Marker', cursive;
+  padding-left: 140px;
 }

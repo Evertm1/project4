@@ -8,7 +8,8 @@ export default function ProjectFeed({
 }) {
     return (
        // <span> Project Feed, this will render out each project as a card</span>
-        
+        <>
+        <h2 id="feed-title">Assembly Line</h2>
         <Card.Group itemsPerRow= {1} stackable centered >
           
         {projects.map((project) => {
@@ -22,7 +23,7 @@ export default function ProjectFeed({
           );
         })}
       </Card.Group>
-    
+      </>
     );
 }
 
