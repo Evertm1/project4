@@ -18,7 +18,7 @@ const panels = _.times(1, (i) => ({
   },
 }))
 
-const AccordionExampleShorthand = (props) => (
+const AccordionExampleShorthand = () => (
     <Accordion defaultActiveIndex={1} panels={panels} class="accordion"/>
   )
   

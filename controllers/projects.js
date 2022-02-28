@@ -76,7 +76,7 @@ async function detail(req, res) {
         //first find the project id using the params request
         //findOne finds the first match
         // const project = await Project.findOne({_id: req.params.project_id}).populate("project").exec()
-        const project = await Project.findById(req.params.project_id) //.populate("project").exec()
+        const project = await Project.findById(req.params.project_id).populate("user").exec()
         //unsure if populate needs to be called above- method should bring in project object
         if (!project) return res.status(404).json({err: 'project not found'})
         console.log(project, "<- this is the queried project")

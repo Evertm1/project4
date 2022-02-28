@@ -11,6 +11,7 @@ export default function DetailPage(){
 
     const [project, setProject] = useState({})
     const [loading, setLoading] = useState(true)
+    const [user, setUser] = useState({});
     const [error, setError] = useState('')
 
     //grab the param from the browser
@@ -26,6 +27,7 @@ export default function DetailPage(){
             
             setLoading(()=> false)
             setProject(() => data.project)
+            setUser(() => data.user);
 
         } catch(err){
             console.log(err);
@@ -36,6 +38,7 @@ export default function DetailPage(){
     }
 
     useEffect(() => {
+
         getProject()
     }, [])
 
@@ -59,8 +62,8 @@ export default function DetailPage(){
 return (
     <>
     <Header />
-    <ProjectDetail project= {project}/>
-    <CommentFeed/>
+    <ProjectDetail project= {project} user={user}/>
+    {/* <CommentFeed comments={project.comments}/> */}
     <AddComment/>
     </>
 )

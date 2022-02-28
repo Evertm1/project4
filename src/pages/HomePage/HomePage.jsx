@@ -59,7 +59,7 @@ export default function HomePage({user, handleLogout}) {
         <Header user={user} handleLogout={handleLogout} />
         <Banner/>
      
-        <AddProject handleAddProject={handleAddProject}/>
+        {/* <AddProject handleAddProject={handleAddProject}/> */}
         <Accordion handleAddProject={handleAddProject}/>
         {/* <Divider/> */}
 

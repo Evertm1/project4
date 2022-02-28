@@ -1,8 +1,8 @@
 import React from 'react';
 import CommentCard from "../CommentCard/CommentCard";
-export default function CommentFeed(props){
+export default function CommentFeed({comments}){
 
     return (
-        <CommentCard/>
+        <CommentCard comments={comments}/>
     )
 }

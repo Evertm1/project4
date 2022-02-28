@@ -1,4 +1,4 @@
-const Comment = require('../models/project');
+const Project = require('../models/project');
 
 const { v4: uuidv4 } = require("uuid");
 const S3 = require("aws-sdk/clients/s3");
@@ -11,7 +11,9 @@ module.exports = {
 }
 
 function create(req, res){
-	console.log(req.body, " <- req.body", req.file, " <track", req.user)
+    console.log(req.body, "<-req.body", req.file, "<-track", req.user, "<-req.user", req.params, "<-req.params")
+
+	// console.log(req.body, " <- req.body", req.file, " <track", req.user)
 
 	const filePath = `${uuidv4()}${req.file.originalname}`;
 	const params = {Bucket: BUCKET, Key: filePath, Body: req.file.buffer}
@@ -23,29 +25,37 @@ function create(req, res){
 		// We're inside of the response from aws 
 		try {
 			// model talking to mongodb
-			let comment = await Comment.create({
+			let commentObj = { 
                 user: req.user,
 				textContent: req.body.textContent,
                 responseTrackUrl: data.Location,
                 responseTrackName: req.body.responseTrackName
 				
-			})
+			}
 
-			comment = await comment.populate('user')
+			//  commentObj = await commentObj.populate('user')
 
-			// respond to the client
-			// What file on the client can we log out this response?
-			res.status(201).json({comment})
+
+            const project = await Project.findById(req.body.projectId)
+            
+            console.log(project, "<-project before comment push")
+            project.comments.push(commentObj)
+            project.save()
+            console.log(project, "<-full project")
+
+
+	// 		// respond to the client
+	// 		// What file on the client can we log out this response?
+	//		res.status(201).json({comment})
 
 
 		} catch(err){
 			console.log(err)
 			res.status(400).json({err})
-		}
+	}
 
 
 	})
 
 
  }
- 

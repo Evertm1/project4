@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-
+import { useParams } from 'react-router-dom'
 import { Button, Form, Grid, Segment } from 'semantic-ui-react'
 import * as commentApi from '../../utils/commentApi'; //* is export, not export default
 
 export default function AddCommentForm(){
 
 const [selectedFile, setSelectedFile] = useState('')
+    const params = useParams()
+    console.log(params)
   const [state, setState] = useState({
     textContent: '',
     responseTrackUrl: '',
@@ -16,6 +18,7 @@ const [selectedFile, setSelectedFile] = useState('')
   function handleFileInput(e){
     setSelectedFile(e.target.files[0])
   }
+
 
 
   function handleChange(e){
@@ -43,6 +46,8 @@ try {
     formData.append('track', selectedFile); // this key matches the key in multer in the 
 	// routes/api/posts create route upload.single('photo')
     formData.append('textContent', state.textContent)
+    formData.append('responseTrackName', state.responseTrackName)
+    formData.append('projectId', params.project_id)
    
 	handleAddComment(formData)
     // Have to submit the form now! We need a function!
@@ -60,6 +65,7 @@ return (
             <Form.Input
                 className="form-control"
                 name="textContent"
+                fluid label= 'Comment'
                 value={state.textContent}
                 placeholder="Leave a comment for this track or project"
                 onChange={handleChange}
