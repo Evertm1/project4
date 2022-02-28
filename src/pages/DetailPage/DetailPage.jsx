@@ -38,8 +38,12 @@ export default function DetailPage(){
     }
 
     useEffect(() => {
-
+       // let isMounted = true;   
         getProject()
+        // return () => {
+        //     setProject({}); // This worked for me
+        //   };
+
     }, [])
 
     if(loading){
@@ -63,7 +67,7 @@ return (
     <>
     <Header />
     <ProjectDetail project= {project} user={user}/>
-    {/* <CommentFeed comments={project.comments}/> */}
+    <CommentFeed comments={project.comments}/>
     <AddComment/>
     </>
 )
