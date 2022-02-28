@@ -11,7 +11,7 @@ module.exports = {
 }
 
 function create(req, res){
-	console.log(req.body, " <- req.body", req.file, " <photo", req.user)
+	console.log(req.body, " <- req.body", req.file, " <track", req.user)
 
 	const filePath = `${uuidv4()}${req.file.originalname}`;
 	const params = {Bucket: BUCKET, Key: filePath, Body: req.file.buffer}

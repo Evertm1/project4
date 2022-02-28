@@ -15,12 +15,13 @@ const mongoose = require('mongoose');
 const commentSchema = mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     textContent: String,
-    date: Date,
-    track1Url: String,
-    track1Name: String,
-    // track2Url: String,
-    // track2Name: String,
-})
+    responseTrackUrl: String,
+    responseTrackName: String,
+
+},  
+{
+    timestamps: true
+  })
 
 
 
