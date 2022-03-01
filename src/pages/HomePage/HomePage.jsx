@@ -39,7 +39,7 @@ export default function HomePage({user, handleLogout}) {
       }
     
 
-      async function deleteProject(projectObj){
+    async function deleteProject(projectObj){
         console.log(projectObj, "<- projectObj")
     try {
         const data = await projectApi.deleteProject(projectObj)
@@ -91,6 +91,7 @@ export default function HomePage({user, handleLogout}) {
                 </Grid.Column>
             </Grid.Row>
         </Grid>
+
         </div>
     </>
   );
