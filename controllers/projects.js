@@ -76,10 +76,18 @@ async function detail(req, res) {
         //first find the project id using the params request
         //findOne finds the first match
         // const project = await Project.findOne({_id: req.params.project_id}).populate("project").exec()
-        const project = await Project.findById(req.params.project_id).populate("user").exec()
-        // project.comments.forEach((comment)=>{       // how to populate user in comment
+        const project = await Project.findById(req.params.project_id).populate( {
+            path: "comments",
+            populate: {
+                path: "user"
+            }
+        }).populate("user").exec()
+        
+        // await project.populate(`comments.${index}.user`)
+
+        // project.comments.forEach((comment)=>{       // how to populate user in comment?
         //     comment.populate("user").exec()
-        // })
+        // // })
         //unsure if populate needs to be called above- method should bring in project object
         if (!project) return res.status(404).json({err: 'project not found'})
         console.log(project, "<- this is the queried project")
@@ -91,10 +99,12 @@ async function detail(req, res) {
 }
 
 async function projectDelete(req, res) {
-    console.log(req.body, "<-req.body controller function")
+    console.log(req.params, "<-req.body controller function")
     try {
-        // Project.findByIdAndDelete(req.body.project_id)
+        await Project.findByIdAndDelete(req.params.project_id)
+
         console.log('project delete controller function')
+        res.status(200).json("delete successful")
     } catch (err){
         res.status(400).json({err})
     }

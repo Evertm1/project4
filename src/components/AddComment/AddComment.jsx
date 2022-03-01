@@ -50,6 +50,7 @@ try {
    
 	handleAddComment(formData)
     // Have to submit the form now! We need a function!
+    window.location = window.location.href;
   }
 
 
