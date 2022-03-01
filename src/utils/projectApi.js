@@ -42,11 +42,11 @@ export function getProject(project_id) {
 
 }
 
-export function deleteProject(project){
-    console.log(project, "<- project")
-    return fetch(BASE_URL, {
+export function deleteProject(project_id){
+    console.log(project_id, "<- project")
+    return fetch(BASE_URL + project_id, {
         method: 'DELETE',
-        body: project,
+        // body: project_id,
         headers: {
             'Authorization': 'Bearer ' + tokenService.getToken(),
             

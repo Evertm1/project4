@@ -8,7 +8,7 @@ const upload = multer();
 router.post('/', upload.array('tracks[]'), projectsCtrl.create); //upload.single('track2File'), upload.single('coverArt')
 router.get('/', projectsCtrl.index);
 router.get('/:project_id', projectsCtrl.detail);
-router.delete('/', projectsCtrl.projectDelete)
+router.delete('/:project_id', projectsCtrl.projectDelete)
 /*---------- Protected Routes ----------*/
 
 

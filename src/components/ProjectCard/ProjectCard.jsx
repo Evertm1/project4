@@ -1,9 +1,19 @@
 import React from 'react';
 
-import { Image, Item, Card } from 'semantic-ui-react'
+import { Image, Item, Card, Button } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
-function ProjectCard({project}) {
+
+
+
+function ProjectCard({project, handleDeleteProject}) {
+
+  function clickHandler() {
+
+    console.log( project._id, '<- click handler invoked projectId')
+    handleDeleteProject(project._id)
+  }
+
 
     return (
     <Card>
@@ -20,6 +30,8 @@ function ProjectCard({project}) {
         {/* By {project.user.username} */}
         By {project.user?.username ? project.user.username : null }
         </Item.Description>
+        <Button onClick={clickHandler}>Delete Project</Button>
+        
         {/* <Item.Extra>{project.user.username},</Item.Extra> */}
       </Item.Content>
     </Item>

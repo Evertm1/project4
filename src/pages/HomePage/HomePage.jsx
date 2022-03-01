@@ -39,12 +39,12 @@ export default function HomePage({user, handleLogout}) {
       }
     
 
-    async function deleteProject(projectObj){
-        console.log(projectObj, "<- projectObj")
+    async function handleDeleteProject(projectId){
+        console.log(projectId, "<- projectId")
     try {
-        const data = await projectApi.deleteProject(projectObj)
+        const data = await projectApi.deleteProject(projectId)
         console.log(data, '<- this is the response from the server, this will contain data we want to delete')
-        setProjects(projects => [data.project, ...projects]) //if any posts exist, they will be emptied into new array
+        // setProjects(projects => [data.project, ...projects]) //if any posts exist, they will be emptied into new array
     }catch(err){
         console.log(err)
     }
@@ -59,7 +59,7 @@ export default function HomePage({user, handleLogout}) {
       // Component Lifecycle in react
       useEffect(() => {
         getProjects();
-      }, []);
+      }, []); //[handleDeleteProject]
     
     if (error) {
         return (
@@ -87,6 +87,7 @@ export default function HomePage({user, handleLogout}) {
                 <ProjectFeed
                     projects={projects}
                     user={user}
+                    handleDeleteProject={handleDeleteProject}
                 />
                 </Grid.Column>
             </Grid.Row>

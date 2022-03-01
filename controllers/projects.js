@@ -87,6 +87,14 @@ async function detail(req, res) {
     }
 }
 
-async function projectDelete() {
-    console.log('project delete controller function')
+async function projectDelete(req, res) {
+    console.log(req.body, "<-req.body controller function")
+    try {
+        // Project.findByIdAndDelete(req.projectId)
+        console.log('project delete controller function')
+    } catch (err){
+        res.status(400).json({err})
+    }
+    //FindByIdAndDelete
+    //return json status for delete successfully,  
 }
