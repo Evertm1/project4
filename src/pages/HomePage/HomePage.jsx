@@ -38,6 +38,22 @@ export default function HomePage({user, handleLogout}) {
         }
       }
     
+
+      async function deleteProject(projectObj){
+        console.log(projectObj, "<- projectObj")
+    try {
+        const data = await projectApi.deleteProject(projectObj)
+        console.log(data, '<- this is the response from the server, this will contain data we want to delete')
+        setProjects(projects => [data.project, ...projects]) //if any posts exist, they will be emptied into new array
+    }catch(err){
+        console.log(err)
+    }
+}
+
+
+
+
+
       // useEffect runs once
       // the component is first rendered (whenever you first view the component)
       // Component Lifecycle in react
@@ -64,6 +80,7 @@ export default function HomePage({user, handleLogout}) {
         {/* <Divider/> */}
 
         <div id="project-feed">
+        
         <Grid centered>
             <Grid.Row>
                 <Grid.Column style={{ maxWidth: 450 }}>

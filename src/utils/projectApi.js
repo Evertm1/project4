@@ -41,3 +41,18 @@ export function getProject(project_id) {
     })
 
 }
+
+export function deleteProject(project){
+    console.log(project, "<- project")
+    return fetch(BASE_URL, {
+        method: 'DELETE',
+        body: project,
+        headers: {
+            'Authorization': 'Bearer ' + tokenService.getToken(),
+            
+        }
+    }).then(res => {
+        if (res.ok) return res.json();
+        throw new Error('Error deleting project');
+    }) 
+}

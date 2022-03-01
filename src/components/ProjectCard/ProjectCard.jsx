@@ -17,7 +17,8 @@ function ProjectCard({project}) {
         </Link>
         <Item.Meta></Item.Meta>
         <Item.Description>
-        By {project.user.username}
+        {/* By {project.user.username} */}
+        By {project.user?.username ? project.user.username : null }
         </Item.Description>
         {/* <Item.Extra>{project.user.username},</Item.Extra> */}
       </Item.Content>

@@ -13,8 +13,8 @@ const BUCKET = process.env.BUCKET_NAME;
 module.exports = {
     create,
     index,
-    detail
-
+    detail,
+    projectDelete
 }
 
 function uploadLoadToS3(ObjFile, folder){
@@ -85,4 +85,8 @@ async function detail(req, res) {
         console.log(err)
         res.status(400).json({err})
     }
+}
+
+async function projectDelete() {
+    console.log('project delete controller function')
 }
