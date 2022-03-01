@@ -33,7 +33,6 @@ const [selectedFile, setSelectedFile] = useState('')
 try {
     const data = await commentApi.create(commentInfo)
     console.log(data, '<- this is the response from the server, this will contain data we want to update our project state')
-    // setProjects(projects => [data.project, ...projects]) //if any posts exist, they will be emptied into new array
 }catch(err){
     console.log(err)
 }
