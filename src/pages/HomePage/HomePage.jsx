@@ -76,12 +76,12 @@ export default function HomePage({user, handleLogout}) {
         <Banner/>
      
         {/* <AddProject handleAddProject={handleAddProject}/> */}
-        <Accordion handleAddProject={handleAddProject}/>
+        {/* <Accordion handleAddProject={handleAddProject}/> */}
         {/* <Divider/> */}
 
-        <div id="project-feed">
         
-        <Grid centered>
+        
+        <Grid centered id="project-feed">
             <Grid.Row>
                 <Grid.Column style={{ maxWidth: 450 }}>
                 <ProjectFeed
@@ -92,8 +92,9 @@ export default function HomePage({user, handleLogout}) {
                 </Grid.Column>
             </Grid.Row>
         </Grid>
+        <AddProject handleAddProject={handleAddProject}/>
 
-        </div>
+      
     </>
   );
 } 

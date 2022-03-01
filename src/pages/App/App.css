@@ -127,6 +127,12 @@ body{
   background-color: white;
   width: 100%;
   position: relative;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  margin-top: 370px;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-right: 0; */
 }
 
 #header-logo-text{
@@ -160,4 +166,12 @@ body{
 #feed-title {
   font-family: 'Permanent Marker', cursive;
   padding-left: 140px;
+}
+
+#projectSubmitForm {
+  padding-top: 50px;
+  position: relative;
+  background-color: white;
+  width: 100%;
+  margin: 0;
 }

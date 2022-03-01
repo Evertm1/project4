@@ -30,6 +30,7 @@ function ProjectCard({project, handleDeleteProject}) {
         {/* By {project.user.username} */}
         By {project.user?.username ? project.user.username : null }
         </Item.Description>
+        
         <Button onClick={clickHandler}>Delete Project</Button>
         
         {/* <Item.Extra>{project.user.username},</Item.Extra> */}
