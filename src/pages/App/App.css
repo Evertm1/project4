@@ -165,13 +165,41 @@ body{
 
 #feed-title {
   font-family: 'Permanent Marker', cursive;
-  padding-left: 140px;
+  margin-left: 140px;
 }
 
 #projectSubmitForm {
-  padding-top: 50px;
+  padding-top: 10px;
   position: relative;
   background-color: white;
   width: 100%;
   margin: 0;
+}
+
+#delete-button {
+  background-color: lightgray;
+  font-size: 10px;
+  position: relative;
+  left: 245px;
+  bottom: 40px;
+}
+
+#card-image{
+  border: 5px solid;
+  border-color: lightgray;
+}
+
+#add-project-title{
+  background-color: white;
+  position: relative;
+  margin-top: -20px;
+  padding-top: 10px;
+  margin-bottom: 15px;
+  top: 20px;
+  font-family: 'Permanent Marker', cursive;
+  margin-left: auto;
+}
+
+#comment-form{
+  padding-top: 40px
 }

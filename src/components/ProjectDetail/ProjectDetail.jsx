@@ -10,7 +10,7 @@ export default function ProjectDetail({project}){
        <h3 id="detail-title">{project.title}</h3>
        <Segment id="detail-segment" raised>
         
-        <div> Project started by {project.user?.username ? project.user.username : null }</div>
+        <div> <strong>Project started by {project.user?.username ? project.user.username : null }</strong></div>
         <div id="project-description"><em>{project.description}</em></div>
         <a href={`${project.trackUrl}`} download><strong>Download {project.trackName}</strong></a>
         

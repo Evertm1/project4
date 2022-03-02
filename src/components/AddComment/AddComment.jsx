@@ -56,7 +56,8 @@ try {
 
 
 return (
-    <Grid textAlign='center' verticalAlign='middle'>
+    
+    <Grid textAlign='center' verticalAlign='middle' id="comment-form">
     <Grid.Column style={{ maxWidth: 450 }}>
       <Segment>
       

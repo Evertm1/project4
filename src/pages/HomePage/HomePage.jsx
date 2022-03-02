@@ -12,6 +12,7 @@ export default function HomePage({user, handleLogout}) {
     
     const [projects, setProjects] = useState([])
     const [error, setError] = useState("");
+    const [toggle, setToggle] = useState(false);
     // all api calls to crud projects should be defined here, then passed down to a componenet
     //if they need to be invoked after some ui
 
@@ -40,10 +41,11 @@ export default function HomePage({user, handleLogout}) {
     
 
     async function handleDeleteProject(projectId){
-        console.log(projectId, "<- projectId")
+        // console.log(projectId, "<- projectId")
     try {
         const data = await projectApi.deleteProject(projectId)
-        console.log(data, '<- this is the response from the server, this will contain data we want to delete')
+        setToggle(current => !current)
+        // console.log(data, '<- this is the response from the server, this will contain data we want to delete')
         // setProjects(projects => [data.project, ...projects]) //if any posts exist, they will be emptied into new array
     }catch(err){
         console.log(err)
@@ -59,7 +61,7 @@ export default function HomePage({user, handleLogout}) {
       // Component Lifecycle in react
       useEffect(() => {
         getProjects();
-      }, []); //[handleDeleteProject]
+      }, [toggle]); //[handleDeleteProject]
     
     if (error) {
         return (

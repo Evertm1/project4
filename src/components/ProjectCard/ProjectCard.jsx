@@ -19,7 +19,7 @@ function ProjectCard({project, handleDeleteProject}) {
     <Card>
     <Item.Group>
     <Item key={project._id}>
-      <Item.Image size='tiny' src={`${project.coverArtUrl}`}/>
+      <Item.Image size='tiny' id="card-image" src={`${project.coverArtUrl}`}/>
 
       <Item.Content>
           <Link to={`/${project._id}`}>
@@ -31,7 +31,7 @@ function ProjectCard({project, handleDeleteProject}) {
         By {project.user?.username ? project.user.username : null }
         </Item.Description>
         
-        <Button onClick={clickHandler}>Delete Project</Button>
+        <Button onClick={clickHandler} id="delete-button">Delete</Button>
         
         {/* <Item.Extra>{project.user.username},</Item.Extra> */}
       </Item.Content>

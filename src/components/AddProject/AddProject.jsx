@@ -54,7 +54,8 @@ export default function AddProjectForm(props){
   
   
     return (
-      
+      <>
+      <h2 id="add-project-title">Start a Project</h2>
       <Grid textAlign='center' id="projectSubmitForm" style={{ height: '60vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
           <Segment>
@@ -131,6 +132,6 @@ export default function AddProjectForm(props){
             </Segment>
         </Grid.Column>
       </Grid>
-     
+      </>
     ); 
   }
