@@ -45,7 +45,7 @@ async function create(req, res){
         user: req.user,
         title: req.body.title,
         description: req.body.description,
-        coverArtUrl: imageLocation.Location,  //<--- how to target a unique value?
+        coverArtUrl: imageLocation.Location,  
         trackUrl: audioLocation.Location,
         trackName: req.body.track1Name,
         
