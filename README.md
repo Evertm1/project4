@@ -1,39 +1,24 @@
-## Setup 
+# Jam Factory
 
-1. Clone the repo
-2. Rename the folder to your Project, you can use the `mv` command like `mv mern-boilerplate yourprojectname`
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+Jam Factory is a file sharing application for musicians. Users can start their own musical project by uploading a starter track (such as a guitar riff) and cover art image. Others can download tracks from existing projects and add their own tracks to build cohesive songs with one another. 
 
+# ScreeenShots
 
-#### Setup your git repo
+![](./public/images/JamHomePage.png) 
+![](./public/images/ProjectPage.png) 
 
-1. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-2.  Then follow the directions on github that says ```…or create a new repository on the command line```
+# Technologies Used
+* JavaScript
+* React
+* MongoDB
+* Express
+* NodeJS
+* Amazon Web Services
+* Html
+* CSS
 
-it should look like this
+# Getting Started
+[Launch App](https://jamfactory.herokuapp.com/)
 
-```
-git init
-git add .
-git commit -m "first commit"
-git remote add origin git@git.generalassemb.ly:SEI-CC/test.git // this will be whatever your address will be
-git push -u origin master
-```
-
-#### Setup the App
-
-```npm install```
-
-*DOTENV*
-
-`touch .env`
-
-add your variables
-
-```
-DATABASE_URL=mongodb://localhost:27017/testagramV2
-BUCKET_NAME=catcollectorone
-SECRET=mysecretforjwt
-```
-
-The app is configured, to use those respective key names for the database, jwt secret and aws bucket, of course you'll have your own values
+# Next Steps
+This project is considered a work in progess. I would like to redesign the user interface to include responsive buttons for showing/hiding forms. I'd also like to implement additional update and delete routes to give users more control. Finally I'd like to build a route to a user's profile page that can be accessed the project page.

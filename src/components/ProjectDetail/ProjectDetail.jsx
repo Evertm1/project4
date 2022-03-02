@@ -12,7 +12,7 @@ export default function ProjectDetail({project}){
         
         <div> <strong>Project started by {project.user?.username ? project.user.username : null }</strong></div>
         <div id="project-description"><em>{project.description}</em></div>
-        <a href={`${project.trackUrl}`} download><strong>Download {project.trackName}</strong></a>
+        <a href={`${project.trackUrl}`} download><strong>{project.trackName}</strong></a>
         
         </Segment>
         </>
