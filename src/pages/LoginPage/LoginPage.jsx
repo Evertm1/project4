@@ -45,14 +45,23 @@ export default function LoginPage(props) {
 
   return (
     <>
+    <body id="login-signup-body">
+    <br></br>
+    <h1 id="login-signup-title">Jam Factory</h1>
+    <br></br>
+    <br></br>
+    
+    
+    <div id="login-container">
       <Grid
+
         textAlign="center"
        
         verticalAlign="middle"
       >
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h2" color="teal" textAlign="center">
-            <Image src="../../images/jam.png"/> Log-in to your
+          <Header as="h2" color="black" textAlign="center">
+            <Image src="../../images/jam.png"/> Login to your
             account
           </Header>
           <Form autoComplete="off" onSubmit={handleSubmit}>
@@ -74,7 +83,7 @@ export default function LoginPage(props) {
                 required
               />
               <Button
-                color="teal"
+                color="blue"
                 fluid
                 size="large"
                 type="submit"
@@ -88,12 +97,16 @@ export default function LoginPage(props) {
             New to us? <Link to="/signup">Sign Up</Link>
           </Message>
           <Message>
-            For visitors...<br></br>
+            Credentials below can be used for demonstration: <br></br>
             <strong>email:</strong> demo@demo.com <br></br><strong>password:</strong> demo
           </Message>
           {error ? <ErrorMessage error={error} /> : null}
         </Grid.Column>
       </Grid>
+      </div>
+    
+    
+    </body>
     </>
   );
 }

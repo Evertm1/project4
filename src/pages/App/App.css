@@ -116,6 +116,28 @@ body{
   /* z-index: 2; */
 }
 
+#login-signup-title{
+  font-family: 'Permanent Marker', cursive;
+  color: white;
+  font-size: 60px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+#login-signup-body{
+  background-color: rgb(71, 74, 121);
+  height: 100vh;
+
+}
+
+#login-container{
+
+  background-color: white;
+  max-width: 500px;
+  max-height: 600px;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 #header {
   position: fixed;

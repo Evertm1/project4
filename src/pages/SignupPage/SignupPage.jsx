@@ -39,9 +39,18 @@ export default function SignUpPage(props) {
   }
 
   return (
-    <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
+    <body id="login-signup-body">
+    <br></br>
+    <h1 id="login-signup-title">Jam Factory</h1>
+    <br></br>
+    <br></br>
+    
+    
+    <div id="login-container">
+    <Grid textAlign="center" 
+    verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="teal" textAlign="center">
+        <Header as="h2" color="black" textAlign="center">
           <Image src="../../images/jam.png" /> Sign Up
         </Header>
         <Form autoComplete="off" onSubmit={handleSubmit}>
@@ -86,6 +95,9 @@ export default function SignUpPage(props) {
         </Form>
       </Grid.Column>
     </Grid>
-
+    </div>
+    
+    
+    </body>
       );
 }
