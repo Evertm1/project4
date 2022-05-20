@@ -87,6 +87,10 @@ export default function LoginPage(props) {
           <Message>
             New to us? <Link to="/signup">Sign Up</Link>
           </Message>
+          <Message>
+            For vistors...<br></br>
+            <strong>email:</strong> demo@demo.com <br></br><strong>password:</strong> demo
+          </Message>
           {error ? <ErrorMessage error={error} /> : null}
         </Grid.Column>
       </Grid>
