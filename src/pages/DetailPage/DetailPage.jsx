@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { Grid } from 'semantic-ui-react'
 import Header from '../../components/Header/Header'
 import ProjectDetail from '../../components/ProjectDetail/ProjectDetail'
 import CommentFeed from '../../components/CommentFeed/CommentFeed'
@@ -50,7 +49,7 @@ export default function DetailPage(){
         return(
             <>
             <Header/>
-            <h1>Loading...</h1>
+            <h1 id="loading">Loading...</h1>
             </>
         )
     }

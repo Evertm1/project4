@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Header, Segment, Image, Icon } from "semantic-ui-react";
+import { Header, Segment } from "semantic-ui-react";
 
 export default function PageHeader({ user, handleLogout }) {
     console.log(user, 'user in header')
@@ -10,18 +10,18 @@ export default function PageHeader({ user, handleLogout }) {
         {/* <Link to="/">
           <Icon name="home"></Icon>
         </Link> */}
-        <Link to="/login" onClick={handleLogout}>
-          Logout
+        <Link to="/login" onClick={handleLogout} id='logout'>
+          Logout {user?.username ? user.username : null }
         </Link>
       </Header>
       <Header as="h2" floated="left">
         <Link to="/">
-          <Image
+          {/* <Image
             src="../../images/jam.png"
             fluid
             size= 'mini'
-          ></Image>
-          <div id="header-logo-text">Jam Factory</div>
+          ></Image> */}
+          <div id="header-logo-text">JF</div>
         </Link>
       </Header>
     </Segment>

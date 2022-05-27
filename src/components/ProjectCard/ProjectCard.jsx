@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 
-function ProjectCard({project, handleDeleteProject}) {
+function ProjectCard({project, handleDeleteProject, user}) {
 
   function clickHandler() {
 
@@ -30,8 +30,8 @@ function ProjectCard({project, handleDeleteProject}) {
         {/* By {project.user.username} */}
         By {project.user?.username ? project.user.username : null }
         </Item.Description>
+        {user?.username === project.user.username ? <Button onClick={clickHandler} id="delete-button">Delete</Button> : null }
         
-        <Button onClick={clickHandler} id="delete-button">Delete</Button>
         
         {/* <Item.Extra>{project.user.username},</Item.Extra> */}
       </Item.Content>

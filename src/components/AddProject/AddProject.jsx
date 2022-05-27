@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Button, Form, Grid, Header, Image,  Segment } from 'semantic-ui-react'
+import { Button, Form, Grid,  Segment } from 'semantic-ui-react'
 
 
 export default function AddProjectForm(props){
@@ -55,7 +55,10 @@ export default function AddProjectForm(props){
   
     return (
       <>
+      <div id='start-project-container'>
+      <div id='start-project-subcontainer'>
       <h2 id="add-project-title">Start a Project</h2>
+      
       <Grid textAlign='center' id="projectSubmitForm" style={{ height: '60vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
           <Segment>
@@ -132,6 +135,8 @@ export default function AddProjectForm(props){
             </Segment>
         </Grid.Column>
       </Grid>
+      </div>
+      </div>
       </>
     ); 
   }

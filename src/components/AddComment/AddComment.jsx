@@ -56,7 +56,10 @@ try {
 
 
 return (
-    
+    <>
+    <br></br>
+    <div id='add-track-container'>
+    <h2 id="add-a-track"> Add a Track</h2>
     <Grid textAlign='center' verticalAlign='middle' id="comment-form">
     <Grid.Column style={{ maxWidth: 450 }}>
       <Segment>
@@ -91,13 +94,16 @@ return (
             <Button
               type="submit"
               className="btn"
+              id="button"
             >
-              Add Your Track!
+              Add Track
             </Button>
           </Form>
         </Segment>
     </Grid.Column>
   </Grid>
+  </div>
+  </>
     
 )
 }
