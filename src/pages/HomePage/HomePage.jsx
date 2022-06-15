@@ -3,9 +3,7 @@ import Header from '../../components/Header/Header';
 import AddProject from '../../components/AddProject/AddProject';
 import ProjectFeed from '../../components/ProjectFeed/ProjectFeed';
 import * as projectApi from '../../utils/projectApi'; //* is export, not export default
-import Accordion from '../../components/Accordion/Accordion';
 import Banner from '../../components/Banner/Banner';
-import userService from "../../utils/userService";
 import { Grid, Divider } from "semantic-ui-react";
 
 export default function HomePage({user, handleLogout}) {
